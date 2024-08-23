@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:white;
+            background-color: white;
             margin: 0;
             padding: 0;
         }
@@ -15,14 +15,12 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            /* padding-top:20px; */
-           
-            background-color:#fcfeff;
+            background-color: #fcfeff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             height: 100vh;
             position: relative;
             box-sizing: border-box;
-
+            padding-bottom: 60px; /* Space for footer */
         }
 
         .header,
@@ -33,46 +31,33 @@
             text-align: center;
             font-size: 24px;
             font-weight: bold;
-           /* position: absolute; */ 
-            left: 0px; /*Align with container's padding */
-            width: calc(100% - 0px); /* Adjust width to match container width */
-            
+            width: 100%;
             box-sizing: border-box;
         }
 
-        
-
         .footer {
-            bottom: 0;
             color: #b1ceee;
             font-weight: normal;
             position: absolute;
-
-        }
-        .header{
-          width: 100%;
+            bottom: 0;
+            left: 0;
+            width: 100%;
         }
 
         .button-row {
             display: flex;
             justify-content: space-around;
-            margin: 20px 20px; /* Added left and right margins */
+            margin: 20px 20px;
             padding: 20px;
-            background-color:#ffffff;
-            /* box-shadow: 0px 0px 1px 1px #ddd8d8; */
+            background-color: #ffffff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border: 1px solid #f5f2f2;
             border-radius: 5px;
-        }
-        
-     
-
-        .button-row:last-child {
-            justify-content: center;
+            flex-wrap: wrap; /* Enable wrapping on small screens */
         }
 
         .button {
-             background-color:#fcfeff;
+            background-color: #fcfeff;
             border: 1px solid #e7e5e5;
             padding: 15px;
             text-align: center;
@@ -84,21 +69,29 @@
             text-decoration: none;
             color: black;
             flex: 1;
-            margin: 0 5px;
-          
+            margin: 10px 5px; /* Margin for better spacing */
+            min-width: 120px; /* Ensure buttons don't get too narrow */
         }
 
         .button:hover {
             background-color: #f0f0f0;
         }
 
-        @media only screen and (max-width: 900px) {
-            .footer {
-                position: fixed;
+        @media only screen and (max-width: 600px) {
+            .header, .footer {
+                font-size: 18px;
+                padding: 15px;
             }
-            .button{
-              width: 65px;
-              /* height: 65px; */
+
+            .button {
+                font-size: 14px;
+                padding: 10px;
+                min-width: 100px;
+            }
+
+            .button-row {
+                padding: 10px;
+                margin: 10px;
             }
         }
     </style>
